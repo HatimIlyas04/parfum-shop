@@ -1,0 +1,690 @@
+/* ── ULTRA PREMIUM LOGO STYLES ── */
+.as-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.as-logo-premium {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  padding: 8px 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Monogram Container */
+.logo-monogram {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+
+.monogram-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  transition: all 0.4s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.letter-a {
+  color: #1a1a1a;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transform: translateX(0);
+}
+
+.letter-s {
+  background: linear-gradient(145deg, #D4AF37 0%, #F5E5A3 30%, #D4AF37 70%, #B8860B 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-left: -8px;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.2));
+}
+
+/* Gold Sparkle Effect on S */
+.letter-s::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #D4AF37, transparent);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* Elegant Divider */
+.logo-divider {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(180deg, transparent, #D4AF37, #E8D8A8, #D4AF37, transparent);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+/* Text Section */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #666;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.logo-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 1px;
+  background: #D4AF37;
+  transition: width 0.3s ease;
+}
+
+.logo-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 7px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-top: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects - Ultra Premium */
+.as-logo:hover .as-logo-premium {
+  transform: translateY(-2px);
+}
+
+.as-logo:hover .letter-a {
+  transform: translateX(-2px);
+  color: #D4AF37;
+}
+
+.as-logo:hover .letter-s {
+  animation: goldShine 1.2s ease-in-out;
+  background-position: 100% 50%;
+}
+
+.as-logo:hover .letter-s::before {
+  opacity: 1;
+  animation: sparkle 0.8s ease-in-out;
+}
+
+.as-logo:hover .logo-divider {
+  height: 40px;
+  opacity: 1;
+  background: linear-gradient(180deg, transparent, #D4AF37, #F3E5AB, #D4AF37, transparent);
+}
+
+.as-logo:hover .logo-title {
+  color: #D4AF37;
+  letter-spacing: 4px;
+}
+
+.as-logo:hover .logo-title::after {
+  width: 100%;
+  background: linear-gradient(90deg, #D4AF37, #F3E5AB);
+}
+
+.as-logo:hover .logo-subtitle {
+  color: #D4AF37;
+  letter-spacing: 2.5px;
+}
+
+/* Animations */
+@keyframes goldShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.6));
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .monogram-letter {
+    font-size: 30px;
+  }
+  
+  .logo-divider {
+    height: 28px;
+  }
+  
+  .logo-title {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+  
+  .logo-subtitle {
+    font-size: 6px;
+    letter-spacing: 1.5px;
+  }
+  
+  .as-logo-premium {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .monogram-letter {
+    font-size: 26px;
+  }
+  
+  .logo-divider {
+    height: 24px;
+  }
+  
+  .logo-title {
+    font-size: 7px;
+    letter-spacing: 2.5px;
+  }
+  
+  .logo-subtitle {
+    font-size: 5.5px;
+    letter-spacing: 1px;
+  }
+  
+  .as-logo-premium {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .logo-subtitle {
+    display: none;
+  }
+  
+  .monogram-letter {
+    font-size: 24px;
+  }
+  
+  .logo-divider {
+    height: 20px;
+  }
+  
+  .logo-title {
+    font-size: 6px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .monogram-letter {
+    font-size: 20px;
+  }
+  
+  .logo-divider {
+    display: none;
+  }
+  
+  .logo-title {
+    font-size: 6px;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* ── PRODUCT DETAILS NAVBAR ── */
+.pd-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+  height: 70px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+/* Logo - Same as Home Page */
+.pd-logo {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.pd-logo-premium {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Monogram Container */
+.logo-monogram {
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+
+.monogram-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  transition: all 0.4s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.letter-a {
+  color: #1a1a1a;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transform: translateX(0);
+}
+
+.letter-s {
+  background: linear-gradient(145deg, #D4AF37 0%, #F5E5A3 30%, #D4AF37 70%, #B8860B 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-left: -8px;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.2));
+}
+
+/* Gold Sparkle Effect */
+.letter-s::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #D4AF37, transparent);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* Elegant Divider */
+.logo-divider {
+  width: 1px;
+  height: 32px;
+  background: linear-gradient(180deg, transparent, #D4AF37, #E8D8A8, #D4AF37, transparent);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+/* Text Section */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #666;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.logo-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  height: 1px;
+  background: #D4AF37;
+  transition: width 0.3s ease;
+}
+
+.logo-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 7px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-top: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Logo Hover Effects */
+.pd-logo:hover .pd-logo-premium {
+  transform: translateY(-2px);
+}
+
+.pd-logo:hover .letter-a {
+  transform: translateX(-2px);
+  color: #D4AF37;
+}
+
+.pd-logo:hover .letter-s {
+  animation: goldShine 1.2s ease-in-out;
+  background-position: 100% 50%;
+}
+
+.pd-logo:hover .letter-s::before {
+  opacity: 1;
+  animation: sparkle 0.8s ease-in-out;
+}
+
+.pd-logo:hover .logo-divider {
+  height: 38px;
+  opacity: 1;
+}
+
+.pd-logo:hover .logo-title {
+  color: #D4AF37;
+  letter-spacing: 4px;
+}
+
+.pd-logo:hover .logo-title::after {
+  width: 100%;
+  background: linear-gradient(90deg, #D4AF37, #F3E5AB);
+}
+
+.pd-logo:hover .logo-subtitle {
+  color: #D4AF37;
+  letter-spacing: 2.5px;
+}
+
+/* ── NAVBAR RIGHT BUTTONS ── */
+.pd-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Back Button */
+.pd-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1.5px solid #e8e5de;
+  border-radius: 40px;
+  padding: 8px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.pd-back-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.pd-back-btn:hover {
+  border-color: #D4AF37;
+  color: #D4AF37;
+  transform: translateX(-2px);
+}
+
+.pd-back-btn:hover svg {
+  transform: translateX(-4px);
+}
+
+/* Cart Button */
+.pd-cart-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid #e8e5de;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #666;
+}
+
+.pd-cart-btn:hover {
+  border-color: #D4AF37;
+  color: #D4AF37;
+  transform: scale(1.05);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+/* Cart Badge */
+.pd-cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #D4AF37;
+  color: #fff;
+  border-radius: 50%;
+  min-width: 18px;
+  height: 18px;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.3);
+  animation: badgePop 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Animations */
+@keyframes goldShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.6));
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes badgePop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .monogram-letter {
+    font-size: 28px;
+  }
+  
+  .logo-divider {
+    height: 28px;
+  }
+  
+  .logo-title {
+    font-size: 7px;
+    letter-spacing: 3px;
+  }
+  
+  .logo-subtitle {
+    font-size: 6px;
+    letter-spacing: 1.5px;
+  }
+  
+  .pd-logo-premium {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pd-nav {
+    padding: 0 20px;
+    height: 64px;
+  }
+  
+  .monogram-letter {
+    font-size: 24px;
+  }
+  
+  .logo-divider {
+    height: 24px;
+  }
+  
+  .logo-title {
+    font-size: 6px;
+    letter-spacing: 2.5px;
+  }
+  
+  .logo-subtitle {
+    font-size: 5px;
+    letter-spacing: 1px;
+  }
+  
+  .pd-logo-premium {
+    gap: 10px;
+  }
+  
+  .pd-back-btn {
+    padding: 6px 16px;
+    font-size: 10px;
+  }
+  
+  .pd-back-btn span {
+    display: none;
+  }
+  
+  .pd-cart-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .logo-subtitle {
+    display: none;
+  }
+  
+  .monogram-letter {
+    font-size: 22px;
+  }
+  
+  .logo-divider {
+    height: 20px;
+  }
+  
+  .logo-title {
+    font-size: 5.5px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .monogram-letter {
+    font-size: 20px;
+  }
+  
+  .logo-divider {
+    display: none;
+  }
+  
+  .logo-title {
+    font-size: 5px;
+    letter-spacing: 1.5px;
+  }
+  
+  .pd-back-btn {
+    padding: 6px 12px;
+  }
+  
+  .pd-cart-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo-title {
+    display: none;
+  }
+  
+  .monogram-letter {
+    font-size: 24px;
+  }
+}
