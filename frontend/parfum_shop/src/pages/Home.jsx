@@ -585,7 +585,7 @@ export default function Home() {
   // Fetch products
   useEffect(() => {
     setLoading(true);
-    axios.get("http://localhost:5000/products")
+    axios.get("http://asfragrances-api.onrender.com/products")
       .then(res => setProducts(res.data))
       .catch(() => setProducts(FALLBACK_PRODUCTS))
       .finally(() => setLoading(false));

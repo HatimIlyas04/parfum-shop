@@ -428,7 +428,7 @@ export default function Checkout() {
       status: "en cours",
     };
     try {
-      await axios.post("http://localhost:5000/orders", payload);
+      await axios.post("http://asfragrances-api.onrender.com/orders", payload);
       localStorage.removeItem("cart");
       window.dispatchEvent(new Event("storage"));
       setOrderRef(`AS-${Date.now().toString().slice(-6)}`);

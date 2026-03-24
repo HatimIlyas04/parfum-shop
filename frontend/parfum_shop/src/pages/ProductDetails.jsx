@@ -450,7 +450,7 @@ const ProductDetails = () => {
     if (!id) return;
     setLoading(true);
     setImageLoaded(false);
-    axios.get(`http://localhost:5000/products/${id}`)
+    axios.get(`http://asfragrances-api.onrender.com/products/${id}`)
       .then(res => { setProduct(res.data); setError(null); })
       .catch(err => {
         // Use fallback for demo
