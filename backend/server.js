@@ -29,6 +29,9 @@ db.connect((err) => {
     }
 });
 
+app.get("/", (req, res) => {
+  res.send("API is running 🚀");
+});
 // GET SINGLE PRODUCT BY ID
 app.get("/products/:id", (req, res) => {
     const id = req.params.id;
