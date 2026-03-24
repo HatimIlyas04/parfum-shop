@@ -6,11 +6,18 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+require("dotenv").config();
+const fs = require("fs");
+
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "ZA3TERza3ter",
-  database: "parfum_shop",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
+  ssl: {
+    ca: fs.readFileSync("./ca.pem")
+  }
 });
 
 // Test database connection
@@ -210,4 +217,5 @@ app.get("/orders/:id", (req, res) => {
   });
 });
 
-app.listen(5000, () => console.log("✅ Server running on port 5000"));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log("Server running on port", PORT));
