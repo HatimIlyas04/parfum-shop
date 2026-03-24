@@ -430,8 +430,8 @@ const Admin = () => {
     setServerError(false);
     try {
       const [pRes, oRes] = await Promise.all([
-        axios.get("http://asfragrances-api.onrender.com/products"),
-        axios.get("http://asfragrances-api.onrender.com/orders"),
+        axios.get("https://asfragrances-api.onrender.com/products"),
+        axios.get("https://asfragrances-api.onrender.com/orders"),
       ]);
       setProducts(pRes.data);
       setOrders(oRes.data);
@@ -507,10 +507,10 @@ const Admin = () => {
     };
     try {
       if (productModal === "add") {
-        await axios.post("http://asfragrances-api.onrender.com/add-product", payload);
+        await axios.post("https://asfragrances-api.onrender.com/add-product", payload);
         showToast("✅ Produit ajouté avec succès !", "success");
       } else {
-        await axios.put(`http://asfragrances-api.onrender.com/products/${editProduct.id}`, payload);
+        await axios.put(`https://asfragrances-api.onrender.com/products/${editProduct.id}`, payload);
         showToast("✅ Produit modifié avec succès !", "success");
       }
       await fetchData();
@@ -528,7 +528,7 @@ const Admin = () => {
   const deleteProduct = async () => {
     setLoading(true);
     try {
-      await axios.delete(`http://asfragrances-api.onrender.com/products/${confirmModal.id}`);
+      await axios.delete(`https://asfragrances-api.onrender.com/products/${confirmModal.id}`);
       showToast("🗑️ Produit supprimé avec succès", "success");
       await fetchData();
     } catch (error) {
@@ -543,7 +543,7 @@ const Admin = () => {
   // ── Order status ──
   const updateOrderStatus = async (orderId, status) => {
     try {
-      await axios.put(`http://asfragrances-api.onrender.com/orders/${orderId}`, { status });
+      await axios.put(`https://asfragrances-api.onrender.com/orders/${orderId}`, { status });
       showToast("Statut mis à jour", "success");
       await fetchData();
     } catch (error) {
@@ -667,7 +667,7 @@ const Admin = () => {
         {serverError && (
           <div style={{ margin: "12px 32px 0", padding: "12px 16px", background: "#fffbeb", border: "1px solid #f6d860", borderRadius: "12px", fontSize: "12px", color: "#92400e", display: "flex", alignItems: "center", gap: "8px" }}>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d={icons.warning} /></svg>
-            ⚠️ Impossible de se connecter au serveur. Vérifiez que le backend est démarré sur http://asfragrances-api.onrender.com
+            ⚠️ Impossible de se connecter au serveur. Vérifiez que le backend est démarré sur https://asfragrances-api.onrender.com
           </div>
         )}
 
