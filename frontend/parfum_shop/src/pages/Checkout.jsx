@@ -41,50 +41,89 @@ const injectStyles = () => {
     .ck-nav-back:hover svg { transform: translateX(-4px); }
     .ck-nav-back svg { transition: transform 0.3s; }
 
-    /* ── STEPS BAR ── */
+    /* ── STEPS BAR - Centered ── */
     .ck-steps {
-      display: flex; align-items: center; justify-content: center; gap: 0;
-      padding: 20px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 48px;
+      width: 100%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .ck-step {
-      display: flex; flex-direction: column; align-items: center; gap: 6px;
-      flex: 1; max-width: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
     }
     .ck-step-circle {
-      width: 34px; height: 34px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
       transition: all 0.3s;
     }
     .ck-step-circle.done  { background: #D4AF37; color: #fff; }
     .ck-step-circle.active { background: #0a0a0a; color: #fff; }
     .ck-step-circle.idle  { background: #f0ede4; color: #aaa; }
     .ck-step-label {
-      font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #bbb;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #bbb;
       white-space: nowrap;
+      text-align: center;
     }
     .ck-step-label.active { color: #0a0a0a; font-weight: 600; }
     .ck-step-label.done   { color: #D4AF37; }
     .ck-step-line {
-      flex: 1; height: 1px; background: #e8e4d8; margin-bottom: 20px; max-width: 80px;
+      width: 60px;
+      height: 1px;
+      background: #e8e4d8;
+      margin: 0 8px 20px 8px;
+      flex-shrink: 0;
     }
     .ck-step-line.done { background: #D4AF37; }
 
     /* ── PAGE ── */
     .ck-page {
-      min-height: 100vh; padding: 100px 5% 60px;
-      animation: ck-fade 0.5s ease both;
+      min-height: 100vh;
+      padding: 100px 5% 80px;
+      max-width: 1300px;
+      margin: 0 auto;
+      width: 100%;
     }
     @keyframes ck-fade { from { opacity:0; } to { opacity:1; } }
 
-    .ck-page-header { margin-bottom: 36px; }
+    /* ── PAGE HEADER - Centered ── */
+    .ck-page-header {
+      margin-bottom: 48px;
+      text-align: center;
+    }
     .ck-eyebrow {
-      font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
-      color: #D4AF37; margin-bottom: 8px;
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #D4AF37;
+      margin-bottom: 12px;
+      text-align: center;
     }
     .ck-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 4vw, 40px); font-weight: 600; color: #0a0a0a; line-height: 1.15;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 600;
+      color: #0a0a0a;
+      line-height: 1.2;
+      text-align: center;
     }
     .ck-title em { color: #D4AF37; font-style: italic; }
 
@@ -92,39 +131,61 @@ const injectStyles = () => {
     .ck-layout {
       display: grid;
       grid-template-columns: 1fr 400px;
-      gap: 28px; align-items: start; max-width: 1200px; margin: 0 auto;
+      gap: 32px;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     /* ── CARD ── */
     .ck-card {
-      background: #fff; border-radius: 22px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
-      border: 1px solid #f0ece0; overflow: hidden;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid #f0ece0;
+      overflow: hidden;
     }
     .ck-card-head {
-      padding: 22px 26px 18px;
+      padding: 24px 28px 20px;
       border-bottom: 1px solid #f0ece0;
-      display: flex; align-items: center; gap: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
     .ck-card-head-icon {
-      width: 36px; height: 36px; border-radius: 10px;
-      background: rgba(212,175,55,0.1); color: #D4AF37;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(212,175,55,0.1);
+      color: #D4AF37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
     .ck-card-title {
       font-family: 'Playfair Display', serif;
-      font-size: 18px; font-weight: 600; color: #0a0a0a;
+      font-size: 20px;
+      font-weight: 600;
+      color: #0a0a0a;
     }
-    .ck-card-body { padding: 24px 26px; }
+    .ck-card-body {
+      padding: 28px;
+    }
 
     /* ── FLOATING LABEL FIELD ── */
-    .ck-field { position: relative; margin-bottom: 20px; }
+    .ck-field { position: relative; margin-bottom: 24px; }
     .ck-field:last-child { margin-bottom: 0; }
     .ck-input {
-      width: 100%; padding: 18px 16px 8px;
-      border: 1.5px solid #e8e4d8; border-radius: 14px;
-      font-family: 'Poppins', sans-serif; font-size: 14px; color: #0a0a0a;
-      background: #fafaf7; outline: none;
+      width: 100%;
+      padding: 18px 16px 8px;
+      border: 1.5px solid #e8e4d8;
+      border-radius: 14px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: #0a0a0a;
+      background: #fafaf7;
+      outline: none;
       transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
     }
     .ck-input:focus {
@@ -135,38 +196,73 @@ const injectStyles = () => {
     .ck-input.error { border-color: #e53e3e; box-shadow: 0 0 0 3px rgba(229,62,62,0.08); }
     .ck-input:focus + .ck-label,
     .ck-input:not(:placeholder-shown) + .ck-label {
-      top: 7px; font-size: 9.5px; letter-spacing: 1.5px; color: #D4AF37;
+      top: 7px;
+      font-size: 9.5px;
+      letter-spacing: 1.5px;
+      color: #D4AF37;
     }
     .ck-label {
-      position: absolute; top: 50%; left: 17px; transform: translateY(-50%);
-      font-family: 'Poppins', sans-serif; font-size: 13.5px; font-weight: 400;
-      color: #aaa; pointer-events: none; letter-spacing: 0.3px;
-      transition: all 0.22s ease; text-transform: uppercase; font-size: 10px; letter-spacing: 1.5px;
+      position: absolute;
+      top: 50%;
+      left: 17px;
+      transform: translateY(-50%);
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: #aaa;
+      pointer-events: none;
+      letter-spacing: 0.3px;
+      transition: all 0.22s ease;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 1.5px;
     }
     .ck-error-hint {
-      display: flex; align-items: center; gap: 5px; margin-top: 6px;
-      font-size: 11.5px; color: #c53030; font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 11.5px;
+      color: #c53030;
+      font-weight: 400;
     }
     textarea.ck-input {
-      resize: none; height: 100px; padding-top: 20px; line-height: 1.5;
+      resize: none;
+      height: 100px;
+      padding-top: 20px;
+      line-height: 1.5;
     }
     textarea.ck-input + .ck-label { top: 20px; transform: none; }
     textarea.ck-input:focus + .ck-label,
     textarea.ck-input:not(:placeholder-shown) + .ck-label {
-      top: 7px; transform: none;
+      top: 7px;
+      transform: none;
     }
 
     /* ── SUBMIT BUTTON ── */
     .ck-submit-btn {
-      width: 100%; padding: 15px; margin-top: 24px;
-      background: #D4AF37; color: #fff; border: none; border-radius: 50px;
-      font-family: 'Poppins', sans-serif; font-size: 11px;
-      font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
-      cursor: pointer; transition: all 0.3s ease;
-      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%;
+      padding: 16px;
+      margin-top: 28px;
+      background: #D4AF37;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
     .ck-submit-btn:hover:not(:disabled) {
-      background: #b8952a; transform: translateY(-2px);
+      background: #b8952a;
+      transform: translateY(-2px);
       box-shadow: 0 12px 28px rgba(212,175,55,0.38);
     }
     .ck-submit-btn:active:not(:disabled) { transform: translateY(0) scale(0.99); }
@@ -174,160 +270,345 @@ const injectStyles = () => {
 
     /* ── SPINNER ── */
     .ck-spinner {
-      width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: #fff; border-radius: 50%; animation: ck-spin 0.7s linear infinite;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: ck-spin 0.7s linear infinite;
     }
     @keyframes ck-spin { to { transform: rotate(360deg); } }
 
-    /* ── SECURITY BADGES ── */
+    /* ── SECURITY BADGES - Centered ── */
     .ck-badges {
-      display: flex; align-items: center; justify-content: center; gap: 20px;
-      margin-top: 18px; padding-top: 18px; border-top: 1px solid #f0ece0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid #f0ece0;
       flex-wrap: wrap;
     }
     .ck-badge-item {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 10.5px; color: #aaa;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10.5px;
+      color: #aaa;
     }
     .ck-badge-item svg { color: #D4AF37; }
 
     /* ── SUMMARY: PRODUCT ITEMS ── */
-    .ck-items { display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px; }
+    .ck-items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
     .ck-item {
-      display: flex; align-items: center; gap: 14px;
-      padding: 12px; border-radius: 14px; background: #fafaf7;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 14px;
+      border-radius: 16px;
+      background: #fafaf7;
       transition: background 0.2s;
     }
     .ck-item:hover { background: #f5f2ea; }
     .ck-item-img {
-      width: 60px; height: 60px; border-radius: 11px; overflow: hidden;
-      flex-shrink: 0; background: #eee;
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #eee;
     }
     .ck-item-img img {
-      width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
-    .ck-item-body { flex: 1; min-width: 0; }
+    .ck-item-body {
+      flex: 1;
+      min-width: 0;
+    }
     .ck-item-name {
-      font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600;
-      color: #0a0a0a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #0a0a0a;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .ck-item-qty {
-      font-size: 11px; color: #aaa; margin-top: 2px;
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 4px;
     }
     .ck-item-price {
-      font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600;
-      color: #D4AF37; white-space: nowrap; flex-shrink: 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #D4AF37;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     /* ── SUMMARY TOTALS ── */
-    .ck-divider { height: 1px; background: #f0ece0; margin: 16px 0; }
-    .ck-sum-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 7px 0;
-      font-family: 'Poppins', sans-serif; font-size: 12.5px; color: #888;
+    .ck-divider {
+      height: 1px;
+      background: #f0ece0;
+      margin: 20px 0;
     }
-    .ck-sum-row span:last-child { font-weight: 500; color: #444; }
+    .ck-sum-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      color: #888;
+    }
+    .ck-sum-row span:last-child {
+      font-weight: 500;
+      color: #444;
+    }
     .ck-sum-total {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 14px 0 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0 8px;
     }
     .ck-sum-total-label {
-      font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: #0a0a0a;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #0a0a0a;
     }
     .ck-sum-total-price {
-      font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 700; color: #D4AF37;
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #D4AF37;
     }
     .ck-delivery-box {
-      background: #f5f2ea; border-radius: 12px; padding: 11px 14px;
-      display: flex; align-items: center; gap: 10px;
-      font-size: 11.5px; color: #888; margin-top: 16px;
+      background: #f5f2ea;
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 12px;
+      color: #888;
+      margin-top: 20px;
+      text-align: center;
     }
     .ck-delivery-box svg { color: #D4AF37; flex-shrink: 0; }
     .ck-delivery-box strong { color: #0a0a0a; }
 
-    /* ── EMPTY CART ── */
+    /* ── EMPTY CART - Perfectly Centered ── */
     .ck-empty {
-      display: flex; flex-direction: column; align-items: center;
-      justify-content: center; padding: 80px 20px; text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
       animation: ck-up 0.5s ease both;
     }
     .ck-empty-icon {
-      width: 80px; height: 80px; border-radius: 50%; background: #f5f2ea;
-      display: flex; align-items: center; justify-content: center;
-      color: #D4AF37; margin-bottom: 22px;
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: #f5f2ea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #D4AF37;
+      margin-bottom: 28px;
     }
     .ck-empty-title {
-      font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600;
-      color: #0a0a0a; margin-bottom: 8px;
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: #0a0a0a;
+      margin-bottom: 12px;
     }
-    .ck-empty-sub { font-size: 13px; color: #aaa; max-width: 260px; line-height: 1.7; margin-bottom: 28px; }
+    .ck-empty-sub {
+      font-size: 14px;
+      color: #aaa;
+      max-width: 300px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
     .ck-empty-btn {
-      padding: 13px 40px; background: #D4AF37; color: #fff; border: none;
-      border-radius: 40px; cursor: pointer;
-      font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600;
-      letter-spacing: 3px; text-transform: uppercase; transition: all 0.3s;
+      padding: 14px 44px;
+      background: #D4AF37;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      transition: all 0.3s;
     }
-    .ck-empty-btn:hover { background: #b8952a; transform: translateY(-3px); box-shadow: 0 10px 24px rgba(212,175,55,0.35); }
+    .ck-empty-btn:hover {
+      background: #b8952a;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(212,175,55,0.35);
+    }
 
-    /* ── SUCCESS SCREEN ── */
+    /* ── SUCCESS SCREEN - Perfectly Centered ── */
     .ck-success {
-      min-height: 100vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 40px 20px;
-      background: #f9f8f5; animation: ck-up 0.5s ease both;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: #f9f8f5;
+      animation: ck-up 0.5s ease both;
     }
     .ck-success-ring {
-      width: 96px; height: 96px; border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
       border: 3px solid #D4AF37;
-      display: flex; align-items: center; justify-content: center;
-      color: #D4AF37; margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #D4AF37;
+      margin-bottom: 32px;
       animation: ck-pop 0.5s cubic-bezier(0.2,0.9,0.4,1.1) both;
     }
-    @keyframes ck-pop { from { transform: scale(0.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    @keyframes ck-pop {
+      from { transform: scale(0.6); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
     .ck-success-title {
-      font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 42px);
-      font-weight: 600; color: #0a0a0a; margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 5vw, 44px);
+      font-weight: 600;
+      color: #0a0a0a;
+      margin-bottom: 16px;
     }
     .ck-success-title em { color: #D4AF37; font-style: italic; }
-    .ck-success-msg { font-size: 13.5px; color: #888; max-width: 360px; line-height: 1.8; margin-bottom: 36px; }
-    .ck-success-ref {
-      background: #fff; border-radius: 14px; padding: 14px 28px;
-      font-family: 'Poppins', sans-serif; font-size: 11.5px; color: #aaa;
-      margin-bottom: 32px; border: 1px solid #f0ece0;
+    .ck-success-msg {
+      font-size: 14px;
+      color: #888;
+      max-width: 380px;
+      line-height: 1.8;
+      margin-bottom: 40px;
     }
-    .ck-success-ref strong { color: #D4AF37; font-size: 14px; letter-spacing: 1px; }
+    .ck-success-ref {
+      background: #fff;
+      border-radius: 16px;
+      padding: 16px 32px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      color: #aaa;
+      margin-bottom: 36px;
+      border: 1px solid #f0ece0;
+    }
+    .ck-success-ref strong {
+      color: #D4AF37;
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
 
     /* ── TOAST ── */
     .ck-toast {
-      position: fixed; bottom: 28px; right: 28px; z-index: 9999;
-      background: #141414; color: #fff;
-      font-family: 'Poppins', sans-serif; font-size: 12.5px;
-      padding: 12px 20px; border-radius: 10px;
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      background: #141414;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12.5px;
+      padding: 12px 20px;
+      border-radius: 10px;
       box-shadow: 0 8px 28px rgba(0,0,0,0.2);
-      transform: translateY(80px) scale(0.96); opacity: 0;
+      transform: translateY(80px) scale(0.96);
+      opacity: 0;
       transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
-      display: flex; align-items: center; gap: 10px; max-width: 320px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 320px;
     }
-    .ck-toast.show { transform: translateY(0) scale(1); opacity: 1; }
+    .ck-toast.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
     .ck-toast.success { border-left: 3px solid #48bb78; }
     .ck-toast.error   { border-left: 3px solid #fc8181; }
 
-    @keyframes ck-up { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes ck-up {
+      from { opacity:0; transform:translateY(22px); }
+      to { opacity:1; transform:translateY(0); }
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .ck-layout { grid-template-columns: 1fr; gap: 20px; }
+      .ck-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
       .ck-summary-col { order: -1; }
     }
     @media (max-width: 768px) {
-      .ck-nav { padding: 0 18px; height: 62px; }
-      .ck-page { padding: 88px 16px 40px; }
-      .ck-card-body { padding: 18px; }
-      .ck-card-head { padding: 16px 18px 14px; }
+      .ck-nav {
+        padding: 0 20px;
+        height: 62px;
+      }
+      .ck-page {
+        padding: 90px 16px 50px;
+      }
+      .ck-steps {
+        max-width: 100%;
+        margin-bottom: 36px;
+      }
+      .ck-step-line {
+        width: 40px;
+      }
+      .ck-card-head {
+        padding: 18px 20px;
+      }
+      .ck-card-body {
+        padding: 20px;
+      }
+      .ck-empty-title {
+        font-size: 24px;
+      }
     }
-    @media (max-width: 420px) {
-      .ck-steps { gap: 0; }
-      .ck-step-label { font-size: 8px; }
+    @media (max-width: 480px) {
+      .ck-step-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+      }
+      .ck-step-label {
+        font-size: 8px;
+      }
+      .ck-step-line {
+        width: 30px;
+      }
+      .ck-badges {
+        gap: 16px;
+      }
+      .ck-badge-item {
+        font-size: 9px;
+      }
     }
   `;
   document.head.appendChild(s);
@@ -392,7 +673,7 @@ export default function Checkout() {
   // ── Totals (always numeric — no string concat bug) ──
   const subtotal = cart.reduce((sum, item) => sum + (parseFloat(item.price) || 0) * (item.qty || 1), 0);
   const shipping = 35;
-  const total    = subtotal + shipping;  // ← correct numeric addition
+  const total    = subtotal + shipping;
 
   // ── Validation ──
   const validate = () => {
@@ -424,7 +705,7 @@ export default function Checkout() {
       products: cart,
       subtotal,
       shipping,
-      total,          // ← numeric, e.g. 235 not "200035"
+      total,
       status: "en cours",
     };
     try {
@@ -446,7 +727,7 @@ export default function Checkout() {
   if (success) return (
     <div className="ck-success">
       <div className="ck-success-ring">
-        <Ico d={IC.check} size={38} sw="2.5" />
+        <Ico d={IC.check} size={42} sw="2.5" />
       </div>
       <h1 className="ck-success-title">Commande <em>confirmée</em> !</h1>
       <p className="ck-success-msg">
@@ -472,7 +753,7 @@ export default function Checkout() {
       </nav>
       <div className="ck-page">
         <div className="ck-empty">
-          <div className="ck-empty-icon"><Ico d={IC.cart} size={36} sw="1.5" /></div>
+          <div className="ck-empty-icon"><Ico d={IC.cart} size={42} sw="1.5" /></div>
           <h2 className="ck-empty-title">Votre panier est vide</h2>
           <p className="ck-empty-sub">Ajoutez des parfums à votre panier avant de passer commande.</p>
           <button className="ck-empty-btn" onClick={() => navigate("/")}>
@@ -497,8 +778,8 @@ export default function Checkout() {
 
       <div className="ck-page">
 
-        {/* Steps */}
-        <div className="ck-steps" style={{ marginBottom: 36 }}>
+        {/* Steps - Perfectly Centered */}
+        <div className="ck-steps">
           <div className="ck-step">
             <div className="ck-step-circle done"><Ico d={IC.cart} size={14} sw="2" /></div>
             <span className="ck-step-label done">Panier</span>
@@ -515,7 +796,7 @@ export default function Checkout() {
           </div>
         </div>
 
-        {/* Header */}
+        {/* Header - Perfectly Centered */}
         <div className="ck-page-header">
           <p className="ck-eyebrow">Finalisation</p>
           <h1 className="ck-title">Votre <em>commande</em></h1>
@@ -528,7 +809,7 @@ export default function Checkout() {
           <div>
             <div className="ck-card">
               <div className="ck-card-head">
-                <div className="ck-card-head-icon"><Ico d={IC.user} size={16} sw="1.7" /></div>
+                <div className="ck-card-head-icon"><Ico d={IC.user} size={18} sw="1.7" /></div>
                 <h2 className="ck-card-title">Informations de livraison</h2>
               </div>
               <div className="ck-card-body">
@@ -600,7 +881,7 @@ export default function Checkout() {
                     }
                   </button>
 
-                  {/* Security badges */}
+                  {/* Security badges - Centered */}
                   <div className="ck-badges">
                     <div className="ck-badge-item">
                       <Ico d={IC.shield} size={13} sw="1.8" /> Paiement sécurisé
@@ -621,7 +902,7 @@ export default function Checkout() {
           <div className="ck-summary-col">
             <div className="ck-card" style={{ position: "sticky", top: 88 }}>
               <div className="ck-card-head">
-                <div className="ck-card-head-icon"><Ico d={IC.summary} size={16} sw="1.7" /></div>
+                <div className="ck-card-head-icon"><Ico d={IC.summary} size={18} sw="1.7" /></div>
                 <h2 className="ck-card-title">Résumé ({cart.reduce((s, i) => s + i.qty, 0)} articles)</h2>
               </div>
               <div className="ck-card-body">
@@ -666,9 +947,9 @@ export default function Checkout() {
                   <span className="ck-sum-total-price">{total.toLocaleString()} DH</span>
                 </div>
 
-                {/* Delivery note */}
+                {/* Delivery note - Centered */}
                 <div className="ck-delivery-box">
-                  <Ico d={IC.truck} size={15} sw="1.7" />
+                  <Ico d={IC.truck} size={16} sw="1.7" />
                   <span>Livraison partout au <strong>Maroc</strong> — 35 DH seulement</span>
                 </div>
               </div>

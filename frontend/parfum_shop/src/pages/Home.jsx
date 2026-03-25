@@ -4,10 +4,10 @@ import axios from "axios";
 
 // ─── GLOBAL STYLES ────────────────────────────────────────────────────────────
 const injectStyles = () => {
-  if (document.getElementById("as-home-styles")) return;
-  const style = document.createElement("style");
-  style.id = "as-home-styles";
-  style.textContent = `
+    if (document.getElementById("as-home-styles")) return;
+    const style = document.createElement("style");
+    style.id = "as-home-styles";
+    style.textContent = `
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap');
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -642,503 +642,512 @@ const injectStyles = () => {
       .as-filter-btn { padding: 8px 13px; font-size: 9.5px; }
     }
   `;
-  document.head.appendChild(style);
+    document.head.appendChild(style);
 };
 
 // ─── SVG ICONS ────────────────────────────────────────────────────────────────
 const CartIcon = ({ size = 18 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-    <line x1="3" y1="6" x2="21" y2="6"/>
-    <path d="M16 10a4 4 0 01-8 0"/>
-  </svg>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <path d="M16 10a4 4 0 01-8 0" />
+    </svg>
 );
 
 const SearchIcon = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="8"/>
-    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-  </svg>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
 );
 
 const CloseIcon = ({ size = 16 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18"/>
-    <line x1="6" y1="6" x2="18" y2="18"/>
-  </svg>
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
 );
 
 const TikTokIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor">
-    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.56V6.82a4.85 4.85 0 01-1.07-.13z"/>
-  </svg>
+    <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.56V6.82a4.85 4.85 0 01-1.07-.13z" />
+    </svg>
 );
 
 const InstagramIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-  </svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
 );
 
 // ─── MOCK FALLBACK DATA ───────────────────────────────────────────────────────
 const FALLBACK_PRODUCTS = [
-  { id: 1, name: "Oud Impérial",    price: 450, category: "homme", image: "https://images.unsplash.com/photo-1541643600914-78b084683702?w=600&q=80", tag: "Bestseller" },
-  { id: 2, name: "Rose Éternelle",  price: 380, category: "femme", image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600&q=80", tag: "Nouveau" },
-  { id: 3, name: "Nuit de Velours", price: 520, category: "homme", image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=600&q=80", tag: "" },
-  { id: 4, name: "Fleur de Soie",   price: 420, category: "femme", image: "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?w=600&q=80", tag: "Exclusif" },
-  { id: 5, name: "Atlas Cedar",     price: 490, category: "mixte", image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80", tag: "Unisex" },
-  { id: 6, name: "Jasmin Blanc",    price: 360, category: "femme", image: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=600&q=80", tag: "Bestseller" },
-  { id: 7, name: "Santal Noir",     price: 550, category: "mixte", image: "https://images.unsplash.com/photo-1594938298603-c8148c4b4e10?w=600&q=80", tag: "Unisex" },
-  { id: 8, name: "Iris Précieux",   price: 410, category: "femme", image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80", tag: "Nouveau" },
+    { id: 1, name: "Oud Impérial", price: 450, category: "homme", image: "https://images.unsplash.com/photo-1541643600914-78b084683702?w=600&q=80", tag: "Bestseller" },
+    { id: 2, name: "Rose Éternelle", price: 380, category: "femme", image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600&q=80", tag: "Nouveau" },
+    { id: 3, name: "Nuit de Velours", price: 520, category: "homme", image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=600&q=80", tag: "" },
+    { id: 4, name: "Fleur de Soie", price: 420, category: "femme", image: "https://images.unsplash.com/photo-1619994403073-2cec844b8e63?w=600&q=80", tag: "Exclusif" },
+    { id: 5, name: "Atlas Cedar", price: 490, category: "mixte", image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80", tag: "Unisex" },
+    { id: 6, name: "Jasmin Blanc", price: 360, category: "femme", image: "https://images.unsplash.com/photo-1563170351-be82bc888aa4?w=600&q=80", tag: "Bestseller" },
+    { id: 7, name: "Santal Noir", price: 550, category: "mixte", image: "https://images.unsplash.com/photo-1594938298603-c8148c4b4e10?w=600&q=80", tag: "Unisex" },
+    { id: 8, name: "Iris Précieux", price: 410, category: "femme", image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80", tag: "Nouveau" },
 ];
 
 const FALLBACK_IMG = "https://images.unsplash.com/photo-1541643600914-78b084683702?w=600&q=80";
 
 // ─── SIDE CART COMPONENT ──────────────────────────────────────────────────────
 function SideCart({ open, onClose, cartItems, onRemove, onCheckout }) {
-const total = cartItems.reduce((sum, item) => {
-  return sum + Number(item.price || 0);
-}, 0);
-  // Lock body scroll when cart is open
-  useEffect(() => {
-    if (open) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "";
-    return () => { document.body.style.overflow = ""; };
-  }, [open]);
+    const total = cartItems.reduce((sum, item) => {
+        return sum + Number(item.price || 0);
+    }, 0);
+    // Lock body scroll when cart is open
+    useEffect(() => {
+        if (open) document.body.style.overflow = "hidden";
+        else document.body.style.overflow = "";
+        return () => { document.body.style.overflow = ""; };
+    }, [open]);
 
-  return (
-    <>
-      <div className={`as-cart-overlay ${open ? "open" : ""}`} onClick={onClose} />
-      <aside className={`as-side-cart ${open ? "open" : ""}`} role="dialog" aria-label="Panier">
-        <div className="as-side-cart-header">
-          <h2 className="as-side-cart-title">Mon Panier</h2>
-          <button className="as-side-cart-close" onClick={onClose} aria-label="Fermer le panier">
-            <CloseIcon size={16} />
-          </button>
-        </div>
-
-        <div className="as-side-cart-body">
-          {cartItems.length === 0 ? (
-            <div className="as-side-cart-empty">
-              <CartIcon size={44} />
-              <p>Votre panier est vide</p>
-            </div>
-          ) : (
-            cartItems.map((item, idx) => (
-              <div key={idx} className="as-cart-item">
-                <img
-                  className="as-cart-item-img"
-                  src={item.image || FALLBACK_IMG}
-                  alt={item.name}
-                  onError={e => { e.target.src = FALLBACK_IMG; }}
-                />
-                <div className="as-cart-item-info">
-                  <p className="as-cart-item-name">{item.name}</p>
-                  <p className="as-cart-item-price">{item.price} DH</p>
+    return (
+        <>
+            <div className={`as-cart-overlay ${open ? "open" : ""}`} onClick={onClose} />
+            <aside className={`as-side-cart ${open ? "open" : ""}`} role="dialog" aria-label="Panier">
+                <div className="as-side-cart-header">
+                    <h2 className="as-side-cart-title">Mon Panier</h2>
+                    <button className="as-side-cart-close" onClick={onClose} aria-label="Fermer le panier">
+                        <CloseIcon size={16} />
+                    </button>
                 </div>
-                <button className="as-cart-item-remove" onClick={() => onRemove(idx)} aria-label="Supprimer">
-                  ×
-                </button>
-              </div>
-            ))
-          )}
-        </div>
 
-        {cartItems.length > 0 && (
-          <div className="as-side-cart-footer">
-            <div className="as-cart-total-row">
-              <span className="as-cart-total-label">Total</span>
-<span className="as-cart-total-val">
-  {total.toFixed(2)} <span>DH</span>
-</span>            </div>
-            <button className="as-cart-checkout-btn" onClick={onCheckout}>
-              Commander
-            </button>
-            <button className="as-cart-view-btn" onClick={onClose}>
-              Continuer mes achats
-            </button>
-          </div>
-        )}
-      </aside>
-    </>
-  );
+                <div className="as-side-cart-body">
+                    {cartItems.length === 0 ? (
+                        <div className="as-side-cart-empty">
+                            <CartIcon size={44} />
+                            <p>Votre panier est vide</p>
+                        </div>
+                    ) : (
+                        cartItems.map((item, idx) => (
+                            <div key={idx} className="as-cart-item">
+                                <img
+                                    className="as-cart-item-img"
+                                    src={item.image || FALLBACK_IMG}
+                                    alt={item.name}
+                                    onError={e => { e.target.src = FALLBACK_IMG; }}
+                                />
+                                <div className="as-cart-item-info">
+                                    <p className="as-cart-item-name">{item.name}</p>
+                                    <p className="as-cart-item-price">{item.price} DH</p>
+                                </div>
+                                <button className="as-cart-item-remove" onClick={() => onRemove(idx)} aria-label="Supprimer">
+                                    ×
+                                </button>
+                            </div>
+                        ))
+                    )}
+                </div>
+
+                {cartItems.length > 0 && (
+                    <div className="as-side-cart-footer">
+                        <div className="as-cart-total-row">
+                            <span className="as-cart-total-label">Total</span>
+                            <span className="as-cart-total-val">
+                                {total.toFixed(2)} <span>DH</span>
+                            </span>            </div>
+                        <button className="as-cart-checkout-btn" onClick={onCheckout}>
+                            Commander
+                        </button>
+                        <button className="as-cart-view-btn" onClick={onClose}>
+                            Continuer mes achats
+                        </button>
+                    </div>
+                )}
+            </aside>
+        </>
+    );
 }
 
 // ─── HOME COMPONENT ───────────────────────────────────────────────────────────
 export default function Home() {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  const [products, setProducts]       = useState([]);
-  const [loading, setLoading]         = useState(true);
-  const [filter, setFilter]           = useState("tous");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchOpen, setSearchOpen]   = useState(false);
-  const [cartItems, setCartItems]     = useState([]);
-  const [cartOpen, setCartOpen]       = useState(false);
-  const [toast, setToast]             = useState({ msg: "", show: false });
-  const [scrolled, setScrolled]       = useState(false);
-  const [menuOpen, setMenuOpen]       = useState(false);
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [filter, setFilter] = useState("tous");
+    const [searchQuery, setSearchQuery] = useState("");
+    const [searchOpen, setSearchOpen] = useState(false);
+    const [cartItems, setCartItems] = useState([]);
+    const [cartOpen, setCartOpen] = useState(false);
+    const [toast, setToast] = useState({ msg: "", show: false });
+    const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
-  const toastTimer  = useRef(null);
-  const productsRef = useRef(null);
-  const searchRef   = useRef(null);
+    const toastTimer = useRef(null);
+    const productsRef = useRef(null);
+    const searchRef = useRef(null);
 
-  useEffect(() => { injectStyles(); }, []);
+    useEffect(() => { injectStyles(); }, []);
 
-  // ── Sync cart from localStorage ──
-  const syncCart = useCallback(() => {
-    try {
-      const stored = JSON.parse(localStorage.getItem("cart") || "[]");
-      setCartItems(stored);
-    } catch { setCartItems([]); }
-  }, []);
+    // ── Sync cart from localStorage ──
+    const syncCart = useCallback(() => {
+        try {
+            const stored = JSON.parse(localStorage.getItem("cart") || "[]");
+            setCartItems(stored);
+        } catch { setCartItems([]); }
+    }, []);
 
-  useEffect(() => {
-    syncCart();
-    window.addEventListener("storage", syncCart);
-    return () => window.removeEventListener("storage", syncCart);
-  }, [syncCart]);
+    useEffect(() => {
+        syncCart();
+        window.addEventListener("storage", syncCart);
+        return () => window.removeEventListener("storage", syncCart);
+    }, [syncCart]);
 
-  // ── Fetch products ──
-  useEffect(() => {
-    setLoading(true);
-    axios.get("https://asfragrances-api.onrender.com/products")
-      .then(res => setProducts(res.data))
-      .catch(() => setProducts(FALLBACK_PRODUCTS))
-      .finally(() => setLoading(false));
-  }, []);
+    // ── Fetch products ──
+    useEffect(() => {
+        setLoading(true);
+        axios.get("https://asfragrances-api.onrender.com/products")
+            .then(res => setProducts(res.data))
+            .catch(() => setProducts(FALLBACK_PRODUCTS))
+            .finally(() => setLoading(false));
+    }, []);
 
-  // ── Scroll listener ──
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    // ── Scroll listener ──
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 40);
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
-  // ── Focus search input when opened ──
-  useEffect(() => {
-    if (searchOpen && searchRef.current) {
-      setTimeout(() => searchRef.current?.focus(), 80);
-    }
-  }, [searchOpen]);
+    // ── Focus search input when opened ──
+    useEffect(() => {
+        if (searchOpen && searchRef.current) {
+            setTimeout(() => searchRef.current?.focus(), 80);
+        }
+    }, [searchOpen]);
 
-  const showToast = useCallback((msg) => {
-    clearTimeout(toastTimer.current);
-    setToast({ msg, show: true });
-    toastTimer.current = setTimeout(() => setToast(t => ({ ...t, show: false })), 2800);
-  }, []);
+    const showToast = useCallback((msg) => {
+        clearTimeout(toastTimer.current);
+        setToast({ msg, show: true });
+        toastTimer.current = setTimeout(() => setToast(t => ({ ...t, show: false })), 2800);
+    }, []);
 
-  const addToCart = useCallback((e, product) => {
-    e.stopPropagation();
-    try {
-      const stored = JSON.parse(localStorage.getItem("cart") || "[]");
-      stored.push(product);
-      localStorage.setItem("cart", JSON.stringify(stored));
-      setCartItems(stored);
-      showToast(`✓ ${product.name} ajouté au panier`);
-      // Brief cart open hint on desktop
-      setCartOpen(true);
-    } catch {}
-  }, [showToast]);
+    const addToCart = useCallback((e, product) => {
+        e.stopPropagation();
+        try {
+            const stored = JSON.parse(localStorage.getItem("cart") || "[]");
+            stored.push(product);
+            localStorage.setItem("cart", JSON.stringify(stored));
+            setCartItems(stored);
+            showToast(`✓ ${product.name} ajouté au panier`);
+            // Brief cart open hint on desktop
+            setCartOpen(true);
+        } catch { }
+    }, [showToast]);
 
-  const removeFromCart = useCallback((idx) => {
-    try {
-      const stored = JSON.parse(localStorage.getItem("cart") || "[]");
-      stored.splice(idx, 1);
-      localStorage.setItem("cart", JSON.stringify(stored));
-      setCartItems([...stored]);
-    } catch {}
-  }, []);
+    const removeFromCart = useCallback((idx) => {
+        try {
+            const stored = JSON.parse(localStorage.getItem("cart") || "[]");
+            stored.splice(idx, 1);
+            localStorage.setItem("cart", JSON.stringify(stored));
+            setCartItems([...stored]);
+        } catch { }
+    }, []);
 
-  const scrollToProducts = () => {
-    productsRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+    const scrollToProducts = () => {
+        productsRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
 
-  // ── Filter + Search logic ──
-  const filteredProducts = (() => {
-    let list = products;
-    if (filter !== "tous") list = list.filter(p => p.category === filter);
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase().trim();
-      list = list.filter(p => p.name.toLowerCase().includes(q));
-    }
-    return list;
-  })();
+    // ── Filter + Search logic ──
+    const filteredProducts = (() => {
+        let list = products;
+        if (filter !== "tous") list = list.filter(p => p.category === filter);
+        if (searchQuery.trim()) {
+            const q = searchQuery.toLowerCase().trim();
+            list = list.filter(p => p.name.toLowerCase().includes(q));
+        }
+        return list;
+    })();
 
-  const cartCount = cartItems.length;
+    const cartCount = cartItems.length;
 
-  return (
-    <div style={{ background: "#fff" }}>
+    return (
+        <div style={{ background: "#fff" }}>
 
-      {/* ── SIDE CART ── */}
-      <SideCart
-        open={cartOpen}
-        onClose={() => setCartOpen(false)}
-        cartItems={cartItems}
-        onRemove={removeFromCart}
-        onCheckout={() => { setCartOpen(false); navigate("/cart"); }}
-      />
-
-      {/* ── NAVBAR ── */}
-      <nav className={`as-navbar ${scrolled ? "scrolled" : ""}`}>
-
-        {/* Logo */}
-        <a href="/" className="as-logo">
-          <div className="as-logo-premium">
-            <span className="as-logo-text">A<span>S</span></span>
-          </div>
-        </a>
-
-        {/* Centered nav links */}
-        <ul className="as-nav-links">
-          <li><a onClick={scrollToProducts}>Parfums</a></li>
-        </ul>
-
-        {/* Right actions */}
-        <div className="as-nav-actions">
-          {/* Search */}
-          <div className={`as-search-wrap ${searchOpen ? "open" : ""}`}>
-            <input
-              ref={searchRef}
-              className="as-search-input"
-              type="text"
-              placeholder="Rechercher un parfum…"
-              value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
-              onKeyDown={e => { if (e.key === "Escape") { setSearchOpen(false); setSearchQuery(""); } }}
+            {/* ── SIDE CART ── */}
+            <SideCart
+                open={cartOpen}
+                onClose={() => setCartOpen(false)}
+                cartItems={cartItems}
+                onRemove={removeFromCart}
+                onCheckout={() => { setCartOpen(false); navigate("/cart"); }}
             />
-            <button
-              className="as-search-toggle"
-              aria-label={searchOpen ? "Fermer la recherche" : "Ouvrir la recherche"}
-              onClick={() => {
-                if (searchOpen) { setSearchQuery(""); }
-                setSearchOpen(v => !v);
-              }}
-            >
-              {searchOpen ? <CloseIcon size={15} /> : <SearchIcon size={16} />}
-            </button>
-          </div>
 
-          {/* Cart */}
-          <button
-            className="as-cart-btn"
-            onClick={() => setCartOpen(true)}
-            aria-label="Ouvrir le panier"
-          >
-            <CartIcon size={18} />
-            {cartCount > 0 && <span className="as-cart-badge">{cartCount}</span>}
-          </button>
+            {/* ── NAVBAR ── */}
+            <nav className={`as-navbar ${scrolled ? "scrolled" : ""}`}>
 
-          {/* Admin */}
-          <button className="as-btn-admin" onClick={() => navigate("/admin")}>
-            Admin
-          </button>
-        </div>
-
-        {/* Hamburger */}
-        <button
-          className={`as-hamburger ${menuOpen ? "open" : ""}`}
-          onClick={() => setMenuOpen(v => !v)}
-          aria-label="Menu"
-        >
-          <span /><span /><span />
-        </button>
-      </nav>
-
-      {/* ── MOBILE MENU ── */}
-      <div className={`as-mobile-menu ${menuOpen ? "open" : ""}`}>
-        {/* Mobile search */}
-        <div className="as-mobile-search">
-          <input
-            type="text"
-            placeholder="Rechercher un parfum…"
-            value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-          />
-          <SearchIcon size={15} />
-        </div>
-
-        <a onClick={() => { scrollToProducts(); setMenuOpen(false); }}>Parfums</a>
-        <a href="#" onClick={() => setMenuOpen(false)}>Notre Histoire</a>
-
-        <div className="as-mobile-actions">
-          <button
-            className="as-cart-btn"
-            onClick={() => { setCartOpen(true); setMenuOpen(false); }}
-            aria-label="Panier"
-          >
-            <CartIcon size={16} />
-            {cartCount > 0 && <span className="as-cart-badge">{cartCount}</span>}
-          </button>
-          <button className="as-btn-admin" onClick={() => { navigate("/admin"); setMenuOpen(false); }}>
-            Admin
-          </button>
-        </div>
-      </div>
-
-      {/* ── ANNOUNCEMENT (no margin-top, sits right after fixed navbar) ── */}
-      <div className="as-announce" style={{ marginTop: 68 }}>
-        Livraison partout au Maroc — seulement <span>35 DH</span>
-      </div>
-
-      {/* ── HERO (no margin-top: announcement is part of stacked flow) ── */}
-      <section className="as-hero">
-        <div className="as-hero-bg" style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1600&q=85')"
-        }} />
-        <div className="as-hero-overlay" />
-        <div className="as-hero-content">
-          <p className="as-hero-eyebrow">L'Art de la Parfumerie</p>
-          <h1 className="as-hero-title">
-            L'élégance commence<br />par le <em>parfum</em>
-          </h1>
-          <p className="as-hero-sub">
-            Livraison partout au Maroc — seulement <strong>35 DH</strong>
-          </p>
-          <div className="as-hero-cta">
-            <button className="as-btn-gold" onClick={scrollToProducts}>Découvrir</button>
-            <button className="as-btn-ghost">Notre Histoire</button>
-          </div>
-        </div>
-        <div className="as-hero-scroll">
-          <div className="as-scroll-line" />
-          Défiler
-        </div>
-      </section>
-
-      {/* ── PRODUCTS SECTION ── */}
-      <section className="as-products" id="products" ref={productsRef}>
-        <div className="as-sec-header">
-          <p className="as-sec-eye">Notre Collection</p>
-          <h2 className="as-sec-title">Nos <em>Parfums</em></h2>
-          <div className="as-sec-line" />
-        </div>
-
-        {/* Filter tabs */}
-        <div className="as-filter-bar">
-          {[
-            { key: "tous",  label: "Tous" },
-            { key: "homme", label: "Homme" },
-            { key: "femme", label: "Femme" },
-            { key: "mixte", label: "Unisex" },
-          ].map(f => (
-            <button
-              key={f.key}
-              className={`as-filter-btn ${filter === f.key ? "active" : ""}`}
-              onClick={() => setFilter(f.key)}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Grid */}
-        {loading ? (
-          <div className="as-loading">
-            <div className="as-spinner" />
-            Chargement des parfums…
-          </div>
-        ) : (
-          <div className="as-product-grid">
-            {filteredProducts.length === 0 ? (
-              <p className="as-empty">
-                {searchQuery ? `Aucun résultat pour "${searchQuery}".` : "Aucun parfum dans cette catégorie."}
-              </p>
-            ) : (
-              filteredProducts.map(product => (
-                <div
-                  key={product.id}
-                  className="as-product-card"
-                  onClick={() => navigate(`/product/${product.id}`)}
-                >
-                  <div className="as-prod-img-wrap">
-                    <img
-                      src={product.image || FALLBACK_IMG}
-                      alt={product.name}
-                      loading="lazy"
-                      onError={e => { e.target.src = FALLBACK_IMG; }}
-                    />
-                    {product.tag && (
-                      <span className={`as-prod-tag ${product.tag === "Nouveau" ? "new" : ""}`}>
-                        {product.tag}
-                      </span>
-                    )}
-                    <div className="as-prod-overlay">
-                      <button className="as-prod-quick-btn" onClick={e => addToCart(e, product)}>
-                        Ajouter au panier
-                      </button>
+                {/* Logo */}
+                <a href="/" className="as-logo">
+                    <div className="as-logo-premium">
+                        <span className="as-logo-text">A<span>S</span></span>
                     </div>
-                  </div>
+                </a>
 
-                  <div className="as-prod-info">
-                    <div className="as-prod-meta">
-                      <h3 className="as-prod-name">{product.name}</h3>
+                {/* Centered nav links */}
+                <ul className="as-nav-links">
+                    <li><a onClick={scrollToProducts}>Parfums</a></li>
+                    <li>
+                        <a onClick={() => navigate("/notre-histoire")}>
+                            Notre Histoire
+                        </a>
+                    </li>
+                </ul>
+
+                {/* Right actions */}
+                <div className="as-nav-actions">
+                    {/* Search */}
+                    <div className={`as-search-wrap ${searchOpen ? "open" : ""}`}>
+                        <input
+                            ref={searchRef}
+                            className="as-search-input"
+                            type="text"
+                            placeholder="Rechercher un parfum…"
+                            value={searchQuery}
+                            onChange={e => setSearchQuery(e.target.value)}
+                            onKeyDown={e => { if (e.key === "Escape") { setSearchOpen(false); setSearchQuery(""); } }}
+                        />
+                        <button
+                            className="as-search-toggle"
+                            aria-label={searchOpen ? "Fermer la recherche" : "Ouvrir la recherche"}
+                            onClick={() => {
+                                if (searchOpen) { setSearchQuery(""); }
+                                setSearchOpen(v => !v);
+                            }}
+                        >
+                            {searchOpen ? <CloseIcon size={15} /> : <SearchIcon size={16} />}
+                        </button>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                      <p className="as-prod-price">{product.price} DH</p>
-                      <button
-                        className="as-card-cart-btn"
-                        onClick={e => addToCart(e, product)}
-                        aria-label={`Ajouter ${product.name} au panier`}
-                      >
-                        <CartIcon size={16} />
-                      </button>
-                    </div>
-                  </div>
+
+                    {/* Cart */}
+                    <button
+                        className="as-cart-btn"
+                        onClick={() => setCartOpen(true)}
+                        aria-label="Ouvrir le panier"
+                    >
+                        <CartIcon size={18} />
+                        {cartCount > 0 && <span className="as-cart-badge">{cartCount}</span>}
+                    </button>
+
+                    {/* Admin */}
+                    <button className="as-btn-admin" onClick={() => navigate("/admin")}>
+                        Admin
+                    </button>
                 </div>
-              ))
-            )}
-          </div>
-        )}
-      </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="as-footer">
-        <div className="as-footer-top">
-          <div>
-            <div className="as-footer-brand">A<span>S</span></div>
-            <p className="as-footer-desc">
-              Des fragrances d'exception, façonnées pour ceux qui exigent le meilleur. Livraison dans tout le Maroc.
-            </p>
-            {/* Social Icons */}
-            <div className="as-footer-socials">
-              <a href="https://www.tiktok.com/@as.fragrances1?_r=1&_t=ZS-94ytX19NjSX" className="as-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
-                <TikTokIcon />
-              </a>
-              <a href="https://www.instagram.com/as.fragrances1?igsh=MW1sbWRoeHBqcTgyag==" className="as-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                <InstagramIcon />
-              </a>
+                {/* Hamburger */}
+                <button
+                    className={`as-hamburger ${menuOpen ? "open" : ""}`}
+                    onClick={() => setMenuOpen(v => !v)}
+                    aria-label="Menu"
+                >
+                    <span /><span /><span />
+                </button>
+            </nav>
+
+            {/* ── MOBILE MENU ── */}
+            <div className={`as-mobile-menu ${menuOpen ? "open" : ""}`}>
+                {/* Mobile search */}
+                <div className="as-mobile-search">
+                    <input
+                        type="text"
+                        placeholder="Rechercher un parfum…"
+                        value={searchQuery}
+                        onChange={e => setSearchQuery(e.target.value)}
+                    />
+                    <SearchIcon size={15} />
+                </div>
+
+                <a onClick={() => { scrollToProducts(); setMenuOpen(false); }}>Parfums</a>
+                <a href="/notre-histoire" onClick={() => setMenuOpen(false)}>Notre Histoire</a>
+
+                <div className="as-mobile-actions">
+                    <button
+                        className="as-cart-btn"
+                        onClick={() => { setCartOpen(true); setMenuOpen(false); }}
+                        aria-label="Panier"
+                    >
+                        <CartIcon size={16} />
+                        {cartCount > 0 && <span className="as-cart-badge">{cartCount}</span>}
+                    </button>
+                    <button className="as-btn-admin" onClick={() => { navigate("/admin"); setMenuOpen(false); }}>
+                        Admin
+                    </button>
+                </div>
             </div>
-          </div>
-          {[
-            { title: "Navigation", links: ["Parfums", "Notre Histoire"] },
-            { title: "Service",    links: ["Livraison", "Retours", "FAQ", "Contact"] },
-            { title: "Légal",      links: ["Mentions légales", "Confidentialité", "CGV"] },
-          ].map(col => (
-            <div key={col.title} className="as-footer-col">
-              <p className="as-footer-col-title">{col.title}</p>
-              <ul>
-                {col.links.map(l => (
-                  <li key={l}><a href="#">{l}</a></li>
-                ))}
-              </ul>
+
+            {/* ── ANNOUNCEMENT (no margin-top, sits right after fixed navbar) ── */}
+            <div className="as-announce" style={{ marginTop: 68 }}>
+                Livraison partout au Maroc — seulement <span>35 DH</span>
             </div>
-          ))}
-        </div>
-        <div className="as-footer-bottom">
-          <span>© 2026 AS FRAGRANCES. Tous droits réservés.</span>
-          <span className="as-footer-gold">Livraison Maroc — 35 DH</span>
-          <span className="as-footer-credit">Created by <span>HATIM ILYAS VITI</span></span>
-        </div>
-      </footer>
 
-      {/* ── TOAST ── */}
-      <div className={`as-toast ${toast.show ? "show" : ""}`}>
-        {toast.msg}
-      </div>
+            {/* ── HERO (no margin-top: announcement is part of stacked flow) ── */}
+            <section className="as-hero">
+                <div className="as-hero-bg" style={{
+                    backgroundImage: "url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1600&q=85')"
+                }} />
+                <div className="as-hero-overlay" />
+                <div className="as-hero-content">
+                    <p className="as-hero-eyebrow">L'Art de la Parfumerie</p>
+                    <h1 className="as-hero-title">
+                        L'élégance commence<br />par le <em>parfum</em>
+                    </h1>
+                    <p className="as-hero-sub">
+                        Livraison partout au Maroc — seulement <strong>35 DH</strong>
+                    </p>
+                    <div className="as-hero-cta">
+                        <button className="as-btn-gold" onClick={scrollToProducts}>Découvrir</button>
+                        <button
+                            className="as-btn-ghost"
+                            onClick={() => navigate("/notre-histoire")}
+                        >
+                            Notre Histoire
+                        </button>                    </div>
+                </div>
+                <div className="as-hero-scroll">
+                    <div className="as-scroll-line" />
+                    Défiler
+                </div>
+            </section>
 
-    </div>
-  );
+            {/* ── PRODUCTS SECTION ── */}
+            <section className="as-products" id="products" ref={productsRef}>
+                <div className="as-sec-header">
+                    <p className="as-sec-eye">Notre Collection</p>
+                    <h2 className="as-sec-title">Nos <em>Parfums</em></h2>
+                    <div className="as-sec-line" />
+                </div>
+
+                {/* Filter tabs */}
+                <div className="as-filter-bar">
+                    {[
+                        { key: "tous", label: "Tous" },
+                        { key: "homme", label: "Homme" },
+                        { key: "femme", label: "Femme" },
+                        { key: "mixte", label: "Unisex" },
+                    ].map(f => (
+                        <button
+                            key={f.key}
+                            className={`as-filter-btn ${filter === f.key ? "active" : ""}`}
+                            onClick={() => setFilter(f.key)}
+                        >
+                            {f.label}
+                        </button>
+                    ))}
+                </div>
+
+                {/* Grid */}
+                {loading ? (
+                    <div className="as-loading">
+                        <div className="as-spinner" />
+                        Chargement des parfums…
+                    </div>
+                ) : (
+                    <div className="as-product-grid">
+                        {filteredProducts.length === 0 ? (
+                            <p className="as-empty">
+                                {searchQuery ? `Aucun résultat pour "${searchQuery}".` : "Aucun parfum dans cette catégorie."}
+                            </p>
+                        ) : (
+                            filteredProducts.map(product => (
+                                <div
+                                    key={product.id}
+                                    className="as-product-card"
+                                    onClick={() => navigate(`/product/${product.id}`)}
+                                >
+                                    <div className="as-prod-img-wrap">
+                                        <img
+                                            src={product.image || FALLBACK_IMG}
+                                            alt={product.name}
+                                            loading="lazy"
+                                            onError={e => { e.target.src = FALLBACK_IMG; }}
+                                        />
+                                        {product.tag && (
+                                            <span className={`as-prod-tag ${product.tag === "Nouveau" ? "new" : ""}`}>
+                                                {product.tag}
+                                            </span>
+                                        )}
+                                        <div className="as-prod-overlay">
+                                            <button className="as-prod-quick-btn" onClick={e => addToCart(e, product)}>
+                                                Ajouter au panier
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div className="as-prod-info">
+                                        <div className="as-prod-meta">
+                                            <h3 className="as-prod-name">{product.name}</h3>
+                                        </div>
+                                        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                                            <p className="as-prod-price">{product.price} DH</p>
+                                            <button
+                                                className="as-card-cart-btn"
+                                                onClick={e => addToCart(e, product)}
+                                                aria-label={`Ajouter ${product.name} au panier`}
+                                            >
+                                                <CartIcon size={16} />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        )}
+                    </div>
+                )}
+            </section>
+
+            {/* ── FOOTER ── */}
+            <footer className="as-footer">
+                <div className="as-footer-top">
+                    <div>
+                        <div className="as-footer-brand">A<span>S</span></div>
+                        <p className="as-footer-desc">
+                            Des fragrances d'exception, façonnées pour ceux qui exigent le meilleur. Livraison dans tout le Maroc.
+                        </p>
+                        {/* Social Icons */}
+                        <div className="as-footer-socials">
+                            <a href="https://www.tiktok.com/@as.fragrances1?_r=1&_t=ZS-94ytX19NjSX" className="as-social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                                <TikTokIcon />
+                            </a>
+                            <a href="https://www.instagram.com/as.fragrances1?igsh=MW1sbWRoeHBqcTgyag==" className="as-social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                                <InstagramIcon />
+                            </a>
+                        </div>
+                    </div>
+                    {[
+                        { title: "Navigation", links: ["Parfums", "Notre Histoire"] },
+                        { title: "Service", links: ["Livraison", "Retours", "FAQ", "Contact"] },
+                        { title: "Légal", links: ["Mentions légales", "Confidentialité", "CGV"] },
+                    ].map(col => (
+                        <div key={col.title} className="as-footer-col">
+                            <p className="as-footer-col-title">{col.title}</p>
+                            <ul>
+                                {col.links.map(l => (
+                                    <li key={l}><a href="#">{l}</a></li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+                <div className="as-footer-bottom">
+                    <span>© 2026 AS FRAGRANCES. Tous droits réservés.</span>
+                    <span className="as-footer-gold">Livraison Maroc — 35 DH</span>
+                    <span className="as-footer-credit">Created by <span>HATIM ILYAS VITI</span></span>
+                </div>
+            </footer>
+
+            {/* ── TOAST ── */}
+            <div className={`as-toast ${toast.show ? "show" : ""}`}>
+                {toast.msg}
+            </div>
+
+        </div>
+    );
 }
