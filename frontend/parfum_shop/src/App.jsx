@@ -5,7 +5,7 @@ import Cart from "./pages/Cart";
 import ProductDetails from "./pages/ProductDetails";
 import Admin from "./pages/Admin";
 import Checkout from "./pages/Checkout";
-import NotreHistoire from "./pages/NotreHistoire1";
+import NotreHistoire from "./pages/NotreHistoire";
 
 
 function App() {
